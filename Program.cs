@@ -9,7 +9,7 @@ builder.Services.AddQuartz(q =>
         .ForJob("job1")
         .WithIdentity("trigger1")
         .StartNow()
-        .WithSimpleSchedule(s => s.WithIntervalInSeconds(10).RepeatForever()));
+        .WithSimpleSchedule(s => s.WithIntervalInSeconds(60).RepeatForever()));
 });
 builder.Services.AddQuartzHostedService(q =>
 {
