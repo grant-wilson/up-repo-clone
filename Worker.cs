@@ -30,7 +30,7 @@ public class Worker : IJob
             Directory.CreateDirectory(cloneDirectory);
         }
 
-        var repoUrl = "";
+        var repoUrl = "https://github.com/grant-wilson/up-repo-clone";
         var branchName = "main";
 
         // if clone directory is empty then clone the repo
