@@ -33,7 +33,6 @@ public class Worker : IJob
         var repoUrl = "https://github.com/grant-wilson/up-repo-clone";
         var branchName = "main";
 
-        // if clone directory is empty then clone the repo
         if (!Directory.EnumerateFileSystemEntries(cloneDirectory).Any())
         {
             _logger.LogInformation("Cloning repo {repoUrl} to {cloneDirectory}", repoUrl, cloneDirectory);
@@ -41,7 +40,6 @@ public class Worker : IJob
         }
         else
         {
-            // check if there are any changes to pull, without pulling
             using (var repo = new Repository(cloneDirectory))
             {
                 var remote = repo.Network.Remotes["origin"];
